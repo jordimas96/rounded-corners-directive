@@ -1,2 +1,2 @@
 # rounded-corners-test
-This is a small web to develop and test a new directive that will automatically adapt children's border-radius to match with the parent
+This is a small website to develop and test a new directive that will automatically adapt the border radius of the children to match that of the parents, calculating all the spacing along the way.
