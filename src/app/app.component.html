@@ -1,172 +1,199 @@
-<div roundedCorners class="pare" style="background-color: rgb(48, 116, 93); padding: 2rem;">
-    <!-- <h1 style="background: rgb(122, 81, 108); padding: 6.30603px 3.88985px 2.76662px 1.9215px; margin: 8.21393px 0.536348px 2.82308px 6.04609px;">Test 1</h1> -->
-    <div class="cards a" style="background: rgb(112, 75, 75);">
-        <div class="card b" style="background: rgb(23, 32, 35); border: 4px solid rgb(106, 152, 0);">
-            <button class="c" style="background-color: rgb(83, 58, 156);">Button</button>
-        </div>
-        <div class="card" style="text-align: right; background: rgb(126, 123, 84); padding: 3.27494px 5.18103px 0.244327px 0.52999px; margin: 8.26956px 0.487698px 8.27063px 7.41272px;">
-            <button>Button</button>
-        </div>
-        <div class="card" style="padding: 6.20991px 5.05947px 3.52208px 8.66324px; background: rgb(31, 24, 20); margin: 5.69879px 1.44453px 8.13094px 4.99133px;">
-            <button>Button</button>
-        </div>
-        <div class="card" style="background: rgb(1, 2, 2); padding: 3.98691px 5.08016px 6.0972px 8.38647px; margin: 8.43443px 8.35152px 1.12786px 1.43002px;">
-            <button>Button</button>
-        </div>
-        <div class="card" style="background: rgb(14, 12, 9); padding: 7.0688px 4.58357px 6.85px 3.26299px; margin: 2.32608px 0.621504px 8.16294px 9.19603px;">
-            <button>Button</button>
-        </div>
-        <div class="card" style="background: rgb(68, 102, 69); padding: 1.86021px 7.5396px 2.80459px 5.5688px; margin: 5.70606px 9.19757px 8.26619px 4.9078px;">
-            <button>Button</button>
-        </div>
+<!-- <div class="linia1"></div>
+<div class="linia2"></div> -->
+
+
+<input type="range" min="0" max="200" class="m-5" style="width: 400px;" [(ngModel)]="roundness" (input)="sliderInput()">
+
+<div class="grup1" style="padding: 40px;">
+
+    <div class="div2" style="padding: 20px;" roundedCorners>
+        <button>20px</button>
     </div>
-    <h1 style="background: rgb(1, 2, 2); padding: 5.61914px 3.52868px 7.51632px 8.20915px; margin: 0.832295px 9.17855px 2.38573px 5.22501px;">Test 2</h1>
-    <div style="background: rgb(148, 151, 101); padding: 6.33039px 3.28262px 8.51779px 7.13797px; margin: 2.26571px 7.11225px 9.00985px 0.300408px;">
-        <div style="background: rgb(12, 18, 13); padding: 9.48773px 4.71701px 3.36102px 2.99173px; margin: 6.89973px 1.33995px 7.70396px 1.6165px;">
-            <button>Botón 1</button>
-            <button>Botón 2</button>
-        </div>
-        <div style="background: rgb(138, 128, 92); padding: 1.86325px 7.95461px 1.61518px 0.857077px; margin: 3.22506px 0.643347px 8.44751px 0.883014px;">
-            <button>Botón 3</button>
-            <button>Botón 4</button>
-        </div>
+    <div class="div2" style="padding: 6px 20px" roundedCorners>
+        <button>6px 20px</button>
     </div>
-    <div style="background: rgb(25, 17, 23); padding: 1.39201px 0.880507px 9.21376px 6.30915px; margin: 5.15295px 0.129181px 3.97848px 0.407342px;">
-        <div style="background: rgb(102, 82, 123); padding: 8.23711px 2.89158px 4.19292px 2.85721px; margin: 4.84251px 2.51237px 9.93591px 3.65019px;">
-            <button>Botón 5</button>
-            <button>Botón 6</button>
-        </div>
-        <div style="background: rgb(34, 23, 30); padding: 0.166899px 5.56781px 1.88517px 9.90329px; margin: 8.58705px 5.4504px 6.24249px 5.78276px;">
-            <button>Botón 7</button>
-            <button>Botón 8</button>
-        </div>
+    <div class="div2" style="padding: 20px 6px;" roundedCorners>
+        <button>20px 6px</button>
     </div>
-    <h1 style="background: rgb(44, 29, 42); padding: 1.67297px 6.44508px 5.36582px 1.19061px; margin: 3.8649px 6.23813px 4.74639px 2.53376px;">Test 3</h1>
-    <div style="display: flex; flex-wrap: wrap; background: rgb(94, 99, 141); padding: 6.93687px 5.21448px 4.25679px 5.57842px; margin: 2.12263px 0.715694px 5.62709px 8.30835px;">
-        <div style="width: 400px; height: 200px; background: rgb(33, 37, 50); margin: 2.81832px 1.21237px 6.20216px 7.03424px; padding: 0.227612px 0.0927869px 4.25134px 9.1813px;">
-            <button>Button</button>
-        </div>
-        <div style="width: 400px; height: 200px; background: rgb(77, 105, 70); text-align: right; margin: 2.85435px 8.20885px 8.60568px 0.474671px; padding: 6.62745px 4.27227px 4.75899px 2.33338px;">
-            <button>Button</button>
-        </div>
-        <div style="width: 400px; height: 200px; background: rgb(43, 37, 29); padding: 2.31362px 2.0473px 8.33276px 1.42714px; margin: 3.37913px 9.94453px 5.80076px 1.04358px;">
-            <button>Button</button>
-        </div>
-        <div style="width: 400px; height: 200px; background: rgb(56, 84, 73); margin: 3.53157px 4.56447px 4.66861px 3.26435px; padding: 7.33986px 5.28837px 3.62755px 6.69489px;">
-            <button>Button</button>
-        </div>
-        <div style="width: 400px; height: 200px; background: rgb(72, 86, 57); margin: 3.74997px 6.09695px 8.98735px 2.25241px; padding: 5.74745px 1.76683px 4.01783px 9.40967px;">
-            <button>Button</button>
-        </div>
-        <div style="width: 400px; height: 200px; background: rgb(40, 27, 27); margin: 7.69187px 0.706039px 7.47593px 9.52112px; padding: 0.616216px 3.84193px 0.0628405px 4.44746px;">
-            <button>Button</button>
-        </div>
+    <div class="div2" style="padding: 40px 20px" roundedCorners>
+        <button>40px 20px</button>
+    </div>
+    <div class="div2" style="padding: 20px 40px;" roundedCorners>
+        <button>20px 40px</button>
     </div>
 
 
-    =====================================================================
-
-    <h1>Test 1</h1>
-
-    <div class="cards">
-        
-        <div class="card" style="">
-            <button style="">
-                Button
-            </button>
-        </div>
-        <div class="card" style="text-align: right;">
-            <button style="">
-                Button
-            </button>
-        </div>
-        <div class="card" style="padding: 0.5rem;">
-            <button style="">
-                Button
-            </button>
-        </div>
-        <div class="card" style="">
-            <button style="">
-                Button
-            </button>
-        </div>
-        <div class="card" style="">
-            <button style="">
-                Button
-            </button>
-        </div>
-        <div class="card" style="">
-            <button style="">
-                Button
-            </button>
-        </div>
-
-    </div>
+    
+</div>
 
 
 
-    <!-- Chatgpt -->
 
 
-    <h1>Test 2</h1>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-    <!-- Primer grupo de divs -->
-    <div style="background-color: #1a1a1a; padding: 10px; margin-bottom: 20px;">
-        <div style="background-color: #333; padding: 15px; margin-bottom: 10px;">
-        <button style="margin-right: 10px; color: white;">Botón 1</button>
-        <button style="color: white;">Botón 2</button>
-        </div>
-        <div style="background-color: #444; padding: 20px; margin-bottom: 15px;">
-        <button style="margin-left: 5px; color: white;">Botón 3</button>
-        <button style="color: white;">Botón 4</button>
+
+
+<div class="grup2" style="border-radius: 100px;" roundedCorners>
+    <div roundedCorners class="pare" style="background-color: rgb(48, 116, 93); padding: 2rem;">
+        <!-- <h1 style="background: rgb(122, 81, 108); padding: 6.30603px 3.88985px 2.76662px 1.9215px; margin: 8.21393px 0.536348px 2.82308px 6.04609px;">Test 1</h1> -->
+        <div class="cards a" style="background: rgb(112, 75, 75);">
+            <div class="card b" style="background: rgb(23, 32, 35); border: 4px solid rgb(106, 152, 0);">
+                <button class="c" style="background-color: rgb(83, 58, 156);">Button</button>
+            </div>
         </div>
     </div>
-
-    <!-- Segundo grupo de divs -->
-    <div style="background-color: #2d2d2d; padding: 12px; margin-bottom: 25px;">
-        <div style="background-color: #555; padding: 18px; margin-bottom: 8px;">
-        <button style="margin-right: 8px; color: white;">Botón 5</button>
-        <button style="color: white;">Botón 6</button>
+    <div>
+        <h1 style="background: rgb(1, 2, 2); padding: 5.61914px 3.52868px 7.51632px 8.20915px; margin: 0.832295px 9.17855px 2.38573px 5.22501px;">Test 2</h1>
+        <div style="background: rgb(148, 151, 101); padding: 6.33039px 3.28262px 8.51779px 7.13797px; margin: 2.26571px 7.11225px 9.00985px 0.300408px;">
+            <div style="background: rgb(12, 18, 13); padding: 9.48773px 4.71701px 3.36102px 2.99173px; margin: 6.89973px 1.33995px 7.70396px 1.6165px;">
+                <button>Botón 1</button>
+                <button>Botón 2</button>
+            </div>
+            <div style="background: rgb(138, 128, 92); padding: 1.86325px 7.95461px 1.61518px 0.857077px; margin: 3.22506px 0.643347px 8.44751px 0.883014px;">
+                <button>Botón 3</button>
+                <button>Botón 4</button>
+            </div>
         </div>
-        <div style="background-color: #666; padding: 22px; margin-bottom: 12px;">
-        <button style="margin-left: 7px; color: white;">Botón 7</button>
-        <button style="color: white;">Botón 8</button>
+        <div style="background: rgb(25, 17, 23); padding: 1.39201px 0.880507px 9.21376px 6.30915px; margin: 5.15295px 0.129181px 3.97848px 0.407342px;">
+            <div style="background: rgb(102, 82, 123); padding: 8.23711px 2.89158px 4.19292px 2.85721px; margin: 4.84251px 2.51237px 9.93591px 3.65019px;">
+                <button>Botón 5</button>
+                <button>Botón 6</button>
+            </div>
+            <div style="background: rgb(34, 23, 30); padding: 0.166899px 5.56781px 1.88517px 9.90329px; margin: 8.58705px 5.4504px 6.24249px 5.78276px;">
+                <button>Botón 7</button>
+                <button>Botón 8</button>
+            </div>
         </div>
-    </div>
-
-
-
-    <h1>Test 3</h1>
-
-
-    <div style="display: flex; flex-wrap: wrap;">
-
-        <div style="width: 400px; height: 200px; background-color: #444; margin: 1rem; padding: 1rem;">
-        <button style="margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1.3rem; color: white;">Button</button>
-        </div>
-
-        <div style="width: 400px; height: 200px; background-color: #444; text-align: right; margin: 1rem; padding: 0.5rem;">
-        <button style="margin: 0.25rem; padding: 0.75rem 1rem; font-size: 1.3rem; color: white;">Button</button>
-        </div>
-
-        <div style="width: 400px; height: 200px; background-color: #444; padding: 0.5rem; margin: 1rem;">
-        <button style="margin: 0.75rem; padding: 0.25rem 1rem; font-size: 1.3rem; color: white;">Button</button>
-        </div>
-
-        <div style="width: 400px; height: 200px; background-color: #444; margin: 1rem; padding: 1rem;">
-        <button style="margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1.3rem; color: white;">Button</button>
-        </div>
-
-        <div style="width: 400px; height: 200px; background-color: #444; margin: 1rem; padding: 1rem;">
-        <button style="margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1.3rem; color: white;">Button</button>
-        </div>
-
-        <div style="width: 400px; height: 200px; background-color: #444; margin: 1rem; padding: 1rem;">
-        <button style="margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1.3rem; color: white;">Button</button>
+        <h1 style="background: rgb(44, 29, 42); padding: 1.67297px 6.44508px 5.36582px 1.19061px; margin: 3.8649px 6.23813px 4.74639px 2.53376px;">Test 3</h1>
+        <div style="display: flex; flex-wrap: wrap; background: rgb(94, 99, 141); padding: 6.93687px 5.21448px 4.25679px 5.57842px; margin: 2.12263px 0.715694px 5.62709px 8.30835px;">
+            <div style="width: 400px; height: 200px; background: rgb(33, 37, 50); margin: 2.81832px 1.21237px 6.20216px 7.03424px; padding: 0.227612px 0.0927869px 4.25134px 9.1813px;">
+                <button>Button</button>
+            </div>
+            <div style="width: 400px; height: 200px; background: rgb(77, 105, 70); text-align: right; margin: 2.85435px 8.20885px 8.60568px 0.474671px; padding: 6.62745px 4.27227px 4.75899px 2.33338px;">
+                <button>Button</button>
+            </div>
+            <div style="width: 400px; height: 200px; background: rgb(43, 37, 29); padding: 2.31362px 2.0473px 8.33276px 1.42714px; margin: 3.37913px 9.94453px 5.80076px 1.04358px;">
+                <button>Button</button>
+            </div>
+            <div style="width: 400px; height: 200px; background: rgb(56, 84, 73); margin: 3.53157px 4.56447px 4.66861px 3.26435px; padding: 7.33986px 5.28837px 3.62755px 6.69489px;">
+                <button>Button</button>
+            </div>
+            <div style="width: 400px; height: 200px; background: rgb(72, 86, 57); margin: 3.74997px 6.09695px 8.98735px 2.25241px; padding: 5.74745px 1.76683px 4.01783px 9.40967px;">
+                <button>Button</button>
+            </div>
+            <div style="width: 400px; height: 200px; background: rgb(40, 27, 27); margin: 7.69187px 0.706039px 7.47593px 9.52112px; padding: 0.616216px 3.84193px 0.0628405px 4.44746px;">
+                <button>Button</button>
+            </div>
         </div>
 
-    </div>
+
+        =====================================================================
+
+        <h1>Test 1</h1>
+
+        <div class="cards">
+            
+            <div class="card" style="">
+                <button style="">
+                    Button
+                </button>
+            </div>
+            <div class="card" style="text-align: right;">
+                <button style="">
+                    Button
+                </button>
+            </div>
+            <div class="card" style="padding: 0.5rem;">
+                <button style="">
+                    Button
+                </button>
+            </div>
+            <div class="card" style="">
+                <button style="">
+                    Button
+                </button>
+            </div>
+            <div class="card" style="">
+                <button style="">
+                    Button
+                </button>
+            </div>
+            <div class="card" style="">
+                <button style="">
+                    Button
+                </button>
+            </div>
+
+        </div>
 
 
-</div>  
+
+        <!-- Chatgpt -->
+
+
+        <h1>Test 2</h1>
+
+
+        <!-- Primer grupo de divs -->
+        <div style="background-color: #1a1a1a; padding: 10px; margin-bottom: 20px;">
+            <div style="background-color: #333; padding: 15px; margin-bottom: 10px;">
+            <button style="margin-right: 10px; color: white;">Botón 1</button>
+            <button style="color: white;">Botón 2</button>
+            </div>
+            <div style="background-color: #444; padding: 20px; margin-bottom: 15px;">
+            <button style="margin-left: 5px; color: white;">Botón 3</button>
+            <button style="color: white;">Botón 4</button>
+            </div>
+        </div>
+
+        <!-- Segundo grupo de divs -->
+        <div style="background-color: #2d2d2d; padding: 12px; margin-bottom: 25px;">
+            <div style="background-color: #555; padding: 18px; margin-bottom: 8px;">
+            <button style="margin-right: 8px; color: white;">Botón 5</button>
+            <button style="color: white;">Botón 6</button>
+            </div>
+            <div style="background-color: #666; padding: 22px; margin-bottom: 12px;">
+            <button style="margin-left: 7px; color: white;">Botón 7</button>
+            <button style="color: white;">Botón 8</button>
+            </div>
+        </div>
+
+
+
+        <h1>Test 3</h1>
+
+
+        <div style="display: flex; flex-wrap: wrap;">
+
+            <div style="width: 400px; height: 200px; background-color: #444; margin: 1rem; padding: 1rem;">
+            <button style="margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1.3rem; color: white;">Button</button>
+            </div>
+
+            <div style="width: 400px; height: 200px; background-color: #444; text-align: right; margin: 1rem; padding: 0.5rem;">
+            <button style="margin: 0.25rem; padding: 0.75rem 1rem; font-size: 1.3rem; color: white;">Button</button>
+            </div>
+
+            <div style="width: 400px; height: 200px; background-color: #444; padding: 0.5rem; margin: 1rem;">
+            <button style="margin: 0.75rem; padding: 0.25rem 1rem; font-size: 1.3rem; color: white;">Button</button>
+            </div>
+
+            <div style="width: 400px; height: 200px; background-color: #444; margin: 1rem; padding: 1rem;">
+            <button style="margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1.3rem; color: white;">Button</button>
+            </div>
+
+            <div style="width: 400px; height: 200px; background-color: #444; margin: 1rem; padding: 1rem;">
+            <button style="margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1.3rem; color: white;">Button</button>
+            </div>
+
+            <div style="width: 400px; height: 200px; background-color: #444; margin: 1rem; padding: 1rem;">
+            <button style="margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1.3rem; color: white;">Button</button>
+            </div>
+
+        </div>
+
+
+    </div>  
+</div>
