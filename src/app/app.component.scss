@@ -1,45 +1,99 @@
-.pare {
-    border-radius: 80px;
-    .a {
-        padding: 10px 3.5px !important;
-        .b {
-            margin: 3.5px 10px !important;
-            padding: 20px 7px !important;
-            .c {
-                margin: 7px 20px !important;
+.linia1 {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #fff8;
+    top: 225px;
+}
+.linia2 {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #fff8;
+    left: 411px;
+}
+
+div.grup1 {
+    background-color: #732b2b;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    // border-radius: 120px;
+
+
+
+
+
+    div {
+        border-radius: 60px;
+        background-color: #ffff9b;
+        margin: 15px;
+
+        button {
+            background-color: #00680e;
+            border: none;
+            padding: 6rem;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+.grup2 {
+    .pare {
+        border-radius: 100px;
+        // border-radius: 160px 80px 40px 20px;
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+
+        div.a {
+            padding: 10px 3.5px !important;
+            div.b {
+                margin: 3.5px 10px !important;
+                padding: 20px 7px !important;
+                button.c {
+                    margin: 7px 20px !important;
+                    width: -webkit-fill-available;
+                }
             }
         }
     }
-}
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
+    .cards {
+        .card {
 
-    .card {
-        width: 400px;
-        height: 200px;
+            background-color: #444;
+            margin: 1rem;
 
-        background-color: #444;
-        margin: 1rem;
+            button {
+                padding: 5rem 10rem;
+                font-size: 1.3rem;
 
-        button {
-            padding: 5rem 10rem;
-            font-size: 1.3rem;
+                border: 0;
+            }
 
-            border: 0;
         }
 
     }
 
+    h1 {
+        margin-left: 3rem;
+    }
+    .custom-border {
+        border: 2px solid #333;
+        padding: 1rem;
+        margin: 1rem;
+        display: inline-block;
+    }
 }
-
-h1 {
-    margin-left: 3rem;
-}
-.custom-border {
-    border: 2px solid #333;
-    padding: 1rem;
-    margin: 1rem;
-    display: inline-block;
-  }

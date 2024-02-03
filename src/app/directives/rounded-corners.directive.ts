@@ -6,15 +6,27 @@ import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 })
 export class RoundedCornersDirective {
 
+    private readonly observer: MutationObserver;
+
     constructor(
         private element: ElementRef,
         private renderer: Renderer2,
     ) {
-
+        // Initialize MutationObserver
+        this.observer = new MutationObserver(() => {
+            this.roundCorners(this.element.nativeElement, null);
+        });
     }
 
     ngOnInit() {
         this.roundCorners(this.element.nativeElement, null);
+        // Observe changes in the element
+        this.observeChanges();
+    }
+
+    private observeChanges() {
+        const config = { attributes: true, childList: true, subtree: true };
+        this.observer.observe(this.element.nativeElement, config);
     }
 
     roundCorners(e: HTMLElement, radiPare: number | null) {
