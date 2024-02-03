@@ -1,28 +1,47 @@
 <!-- <div class="linia1"></div>
 <div class="linia2"></div> -->
 
-<div class="p-5" style="color: white;">
+<!-- <div class="p-5" style="color: white;">
     <input type="range" min="0" max="200" class="mb-4" style="width: 400px;" [(ngModel)]="roundness" (input)="sliderInput()"> {{roundness}} px
     <br>
     <input type="range" min="0" max="200" step="20" style="width: 400px;" [(ngModel)]="roundness" (input)="sliderInput()"> {{roundness}} px
+</div> -->
+<div class="row no-gutters p-5">
+    <div class="col-6" style="color: white;">
+        <input type="range" min="0" max="200" class="mb-3" style="width: 80%;" [(ngModel)]="eachRoundness[0]" (input)="sliderInput()"> {{eachRoundness[0]}} px <br>
+        <!-- <input type="range" min="0" max="200" step="20" style="width: 80%;" [(ngModel)]="eachRoundness[0]" (input)="sliderInput()"> {{eachRoundness[0]}} px -->
+    </div>
+    <div class="col-6" style="color: white;">
+        <input type="range" min="0" max="200" class="mb-3" style="width: 80%;" [(ngModel)]="eachRoundness[1]" (input)="sliderInput()"> {{eachRoundness[1]}} px <br>
+        <!-- <input type="range" min="0" max="200" step="20" style="width: 80%;" [(ngModel)]="eachRoundness[1]" (input)="sliderInput()"> {{eachRoundness[1]}} px -->
+    </div>
+    <div class="col-6" style="color: white;">
+        <input type="range" min="0" max="200" class="mb-3" style="width: 80%;" [(ngModel)]="eachRoundness[3]" (input)="sliderInput()"> {{eachRoundness[3]}} px <br>
+        <!-- <input type="range" min="0" max="200" step="20" style="width: 80%;" [(ngModel)]="eachRoundness[3]" (input)="sliderInput()"> {{eachRoundness[3]}} px -->
+    </div>
+    <div class="col-6" style="color: white;">
+        <input type="range" min="0" max="200" class="mb-3" style="width: 80%;" [(ngModel)]="eachRoundness[2]" (input)="sliderInput()"> {{eachRoundness[2]}} px <br>
+        <!-- <input type="range" min="0" max="200" step="20" style="width: 80%;" [(ngModel)]="eachRoundness[2]" (input)="sliderInput()"> {{eachRoundness[2]}} px -->
+    </div>
 </div>
+
 
 <div class="grup1" style="padding: 40px;">
 
-    <div class="div2" style="padding: 20px;" roundedCorners>
-        <button>20px</button>
+    <div class="div2" style="padding: 30px;" roundedCorners>
+        <button>30px</button>
     </div>
-    <div class="div2" style="padding: 6px 20px" roundedCorners>
-        <button>6px 20px</button>
+    <div class="div2" style="padding: 6px 30px;" roundedCorners>
+        <button>6px 30px</button>
     </div>
-    <div class="div2" style="padding: 20px 6px;" roundedCorners>
-        <button>20px 6px</button>
+    <div class="div2" style="padding: 30px 6px;" roundedCorners>
+        <button>30px 6px</button>
     </div>
-    <div class="div2" style="padding: 40px 20px" roundedCorners>
-        <button>40px 20px</button>
+    <div class="div2" style="padding: 40px 30px;" roundedCorners>
+        <button>40px 30px</button>
     </div>
-    <div class="div2" style="padding: 20px 40px;" roundedCorners>
-        <button>20px 40px</button>
+    <div class="div2" style="padding: 30px 40px;" roundedCorners>
+        <button>30px 40px</button>
     </div>
 
 

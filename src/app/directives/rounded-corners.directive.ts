@@ -23,10 +23,13 @@ export class RoundedCornersDirective {
     
 
     roundCorners(e: HTMLElement, radisPare: Array<number> | null) {
+        
         let unit; // Suposant que tot estigui en les mateixes unitats //
+        let radis: Array<any> = [];
         
         const estilElement = e.computedStyleMap();
-        let radis: Array<any> = [];
+        const estilPare = e.parentElement!.computedStyleMap();
+
 
         if (radisPare === null) {
             
@@ -35,12 +38,10 @@ export class RoundedCornersDirective {
             radis = [
                 (<any>estilElement.get("border-top-left-radius")!).value,
                 (<any>estilElement.get("border-top-right-radius")!).value,
-                (<any>estilElement.get("border-bottom-left-radius")!).value,
                 (<any>estilElement.get("border-bottom-right-radius")!).value,
+                (<any>estilElement.get("border-bottom-left-radius")!).value,
             ];
         } else {
-
-            const estilPare = e.parentElement!.computedStyleMap();
 
             unit = (<any>estilPare.get("padding-top")!).unit;
             
@@ -57,23 +58,23 @@ export class RoundedCornersDirective {
             //   2    //     3   2     //
             
             // top left //
-            radis[0] = radisPare[0] - this.mesGran(sumesMarges[3], sumesMarges[0]);
+            radis[0] = this.minim0(radisPare[0] - this.mesGran(sumesMarges[3], sumesMarges[0]));
 
             // top right //
-            radis[1] = radisPare[0] - this.mesGran(sumesMarges[0], sumesMarges[1]);
+            radis[1] = this.minim0(radisPare[1] - this.mesGran(sumesMarges[0], sumesMarges[1]));
 
             // bottom right //
-            radis[2] = radisPare[0] - this.mesGran(sumesMarges[1], sumesMarges[2]);
+            radis[2] = this.minim0(radisPare[2] - this.mesGran(sumesMarges[1], sumesMarges[2]));
 
             // bottom left //
-            radis[3] = radisPare[0] - this.mesGran(sumesMarges[2], sumesMarges[3]);
+            radis[3] = this.minim0(radisPare[3] - this.mesGran(sumesMarges[2], sumesMarges[3]));
 
-            this.renderer.setStyle(e, "border-radius",
-                radis[0] + unit + " " +
-                radis[1] + unit + " " +
-                radis[2] + unit + " " +
-                radis[3] + unit + " "
-            );
+
+            
+            this.renderer.setStyle(e, "border-top-left-radius", radis[0] + unit);
+            this.renderer.setStyle(e, "border-top-right-radius", radis[1] + unit);
+            this.renderer.setStyle(e, "border-bottom-right-radius", radis[2] + unit);
+            this.renderer.setStyle(e, "border-bottom-left-radius", radis[3] + unit);
         }
             
         
@@ -90,7 +91,7 @@ export class RoundedCornersDirective {
     // Utils //
     mesPetit(n1: number, n2: number) { return n1 < n2 ? n1 : n2; }
     mesGran(n1: number, n2: number) { return n1 > n2 ? n1 : n2; }
-
+    minim0(n: number) { return n > 0 ? n : 0; }
 
 
     // Observar canvis //

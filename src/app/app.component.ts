@@ -18,6 +18,7 @@ export class AppComponent {
     title = 'rounded-corners-test';
 
     public roundness = 60;
+    public eachRoundness = [60, 60, 60, 60];
 
     ngOnInit() {
         // $(".grup1 *").each((i:any, e:any) => {
@@ -30,6 +31,12 @@ export class AppComponent {
     }
 
     sliderInput() {
-        $(".div2").css("border-radius", this.roundness + "px");
+        // $(".div2").css("border-radius", this.roundness + "px");
+        $(".div2").css("border-radius",
+            this.eachRoundness[0] + "px " +
+            this.eachRoundness[1] + "px " +
+            this.eachRoundness[2] + "px " +
+            this.eachRoundness[3] + "px "
+        );
     }
 }
