@@ -1,3 +1,65 @@
+.containerWithDivs {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+
+    width: 400px;
+
+    margin-left: 4rem;
+
+    div {
+        width: 180px;
+        height: 180px;
+        margin: 10px;
+        text-align: center;
+        font-size: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.mobil {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(45deg, rgb(251, 96, 96), rgb(255, 238, 154));
+
+    .save {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgb(10, 132, 255);
+        
+        font-size: 2rem;
+        margin: 0.5rem;
+        border: none;
+    }
+}
+
+.div3 {
+    div {
+        background-color: rgb(28, 123, 102);
+        border-radius: 2rem;
+        margin-left: 4rem;
+        margin-top: 1rem;
+        padding: 1rem;
+
+        button {
+            margin: 5rem 5rem 0 0;
+            background-color: rgb(95, 5, 5);
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+button {
+    border: none;
+}
+
 div.grup1 {
     background-color: #732b2b;
     display: flex;
@@ -16,8 +78,7 @@ div.grup1 {
 
         button {
             background-color: #00680e;
-            border: 10px solid;
-            border-color: rgb(143, 76, 0) rgb(78, 0, 114) rgb(139, 118, 0) rgb(0, 73, 89);
+            border: none;
             padding: 5rem;
             font-size: 2rem;
         }

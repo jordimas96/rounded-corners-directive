@@ -17,8 +17,10 @@ declare var $: any;
 export class AppComponent {
     title = 'rounded-corners-test';
 
-    public roundness = 60;
     public eachRoundness = [60, 60, 60, 60];
+    
+    public divRoundness = 30;
+    
 
     ngOnInit() {
         // $(".grup1 *").each((i:any, e:any) => {

@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
     selector: '[roundedCorners]',
@@ -11,20 +11,20 @@ export class RoundedCornersDirective {
         private element: ElementRef,
         private renderer: Renderer2,
     ) {
-        this.observer = new MutationObserver(() => { this.roundCorners(this.element.nativeElement, null); });
+        this.observer = new MutationObserver(() => { this.roundCorners(this.element.nativeElement); });
     }
 
     ngOnInit() {
-        this.roundCorners(this.element.nativeElement, null);
+        this.roundCorners(this.element.nativeElement);
         
         this.observeChanges();
     }
 
     
 
-    roundCorners(e: HTMLElement, radisPare: Array<number> | null) {
+    roundCorners(e: HTMLElement, radisPare: Array<number> | null = null, unit: string = "px") {
         
-        let unit; // Suposant que tot estigui en les mateixes unitats //
+        // let unit; // Suposant que tot estigui en les mateixes unitats //
         let radis: Array<any> = [];
         
         const estilElement = e.computedStyleMap();
@@ -42,34 +42,17 @@ export class RoundedCornersDirective {
                 (<any>estilElement.get("border-bottom-left-radius")!).value,
             ];
         } else {
-
-            unit = (<any>estilPare.get("padding-top")!).unit;
             
-            let sumesMarges = [
-                (<any>estilPare.get("padding-top")!).value    + (<any>estilPare.get("border-top-width")!).value    + (<any>estilElement.get("margin-top")!).value,
-                (<any>estilPare.get("padding-left")!).value   + (<any>estilPare.get("border-left-width")!).value   + (<any>estilElement.get("margin-left")!).value,
-                (<any>estilPare.get("padding-bottom")!).value + (<any>estilPare.get("border-bottom-width")!).value + (<any>estilElement.get("margin-bottom")!).value,
-                (<any>estilPare.get("padding-right")!).value  + (<any>estilPare.get("border-right-width")!).value  + (<any>estilElement.get("margin-right")!).value,
-            ];
-
+            let marges = this.getSumaMarges(estilElement, estilPare);            
             // espais // border-radius //
             //   0    //     0   1     //
             // 3   1  //               //
             //   2    //     3   2     //
+            radis[0] = this.minim0(radisPare[0] - this.mesGran(marges[3], marges[0])); // top left //
+            radis[1] = this.minim0(radisPare[1] - this.mesGran(marges[0], marges[1])); // top right //
+            radis[2] = this.minim0(radisPare[2] - this.mesGran(marges[1], marges[2])); // bottom right //
+            radis[3] = this.minim0(radisPare[3] - this.mesGran(marges[2], marges[3])); // bottom left //
             
-            // top left //
-            radis[0] = this.minim0(radisPare[0] - this.mesGran(sumesMarges[3], sumesMarges[0]));
-
-            // top right //
-            radis[1] = this.minim0(radisPare[1] - this.mesGran(sumesMarges[0], sumesMarges[1]));
-
-            // bottom right //
-            radis[2] = this.minim0(radisPare[2] - this.mesGran(sumesMarges[1], sumesMarges[2]));
-
-            // bottom left //
-            radis[3] = this.minim0(radisPare[3] - this.mesGran(sumesMarges[2], sumesMarges[3]));
-
-
             
             this.renderer.setStyle(e, "border-top-left-radius", radis[0] + unit);
             this.renderer.setStyle(e, "border-top-right-radius", radis[1] + unit);
@@ -81,11 +64,22 @@ export class RoundedCornersDirective {
 
         // Llancem la funcio pels fills //
         e.childNodes.forEach((e: ChildNode) => {
-            if (!e.nodeValue)
-                this.roundCorners(<HTMLElement>e, radis);
+            if (e.nodeValue) return;
+
+            this.roundCorners(<HTMLElement>e, radis, unit);
         });
     
 
+    }
+
+    getSumaMarges(estilElement: StylePropertyMapReadOnly, estilPare: StylePropertyMapReadOnly) {
+        // Distancies calculades només en marges, no funcionarà si es position absolute, hi ha un transform, etc.
+        return [
+            (<any>estilPare.get("padding-top")!).value    + (<any>estilPare.get("border-top-width")!).value    + (<any>estilElement.get("margin-top")!).value,
+            (<any>estilPare.get("padding-right")!).value  + (<any>estilPare.get("border-right-width")!).value  + (<any>estilElement.get("margin-right")!).value,
+            (<any>estilPare.get("padding-bottom")!).value + (<any>estilPare.get("border-bottom-width")!).value + (<any>estilElement.get("margin-bottom")!).value,
+            (<any>estilPare.get("padding-left")!).value   + (<any>estilPare.get("border-left-width")!).value   + (<any>estilElement.get("margin-left")!).value,
+        ];
     }
 
     // Utils //

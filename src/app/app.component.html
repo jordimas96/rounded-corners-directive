@@ -1,39 +1,63 @@
 <h1 class="p-3">Rounded Corners Directive</h1>
 
+<h3 class="px-5">Container with divs inside</h3>
+
+
+<div class="row no-gutters" style="align-items: flex-start">
+    <div class="div3 row no-gutters mb-4">
+        <div>
+            Before roundedCorners<br>
+            <button>Bottom left aligned, <br> rounded button</button>
+        </div>
+        <div roundedCorners>
+            After roundedCorners<br>
+            <button>Bottom left aligned, <br> rounded button</button>
+        </div>
+        <div>
+            Should be<br>
+            <button style="border-radius: 0.5rem 0.5rem 0.5rem 16px;">
+                Bottom left aligned, <br> rounded button
+            </button>
+        </div>
+    </div>
+
+    <div class="p-5" style="color: white; width: 100%;">
+        <input type="range" min="0" max="100" class="mb-4" style="width: 400px;" [(ngModel)]="divRoundness"> {{divRoundness}} px
+    </div>
+
+    <div class="containerWithDivs row no-gutters" style="background-color: rgb(90, 181, 255);" roundedCorners [style.borderRadius]="divRoundness+'px'">
+        <div class="a" style="background-color: #5f1fa3;">A</div>
+        <div class="b" style="background-color: #c03c9d;">B</div>
+        <div class="c" style="background-color: #b17a2d;">C</div>
+        <div class="d" style="background-color: #8dc144;">D</div>
+    </div>
+
+    <div class="mobil ml-4" roundedCorners [style.borderRadius]="divRoundness/3+'px'">
+        <button class="save">Save</button>
+    </div>
+</div>
 
 
 
-<!-- <div class="p-5" style="color: white;">
-    <input type="range" min="0" max="200" class="mb-4" style="width: 400px;" [(ngModel)]="roundness" (input)="sliderInput()"> {{roundness}} px
-    <br>
-    <input type="range" min="0" max="200" step="20" style="width: 400px;" [(ngModel)]="roundness" (input)="sliderInput()"> {{roundness}} px
-</div> -->
 
 
 
 
-
-
-
-
-
-
-
-
+<br><br><br><br><br><br><br><br>
 
 <h3 class="px-5">Corners with different paddings</h3>
 <div class="row no-gutters p-5">
     <div class="col-6" style="color: white;">
-        <input type="range" min="0" max="200" class="mb-4" style="width: 80%;" [(ngModel)]="eachRoundness[0]" (input)="sliderInput()"> {{eachRoundness[0]}} px
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="eachRoundness[0]" (input)="sliderInput()"> {{eachRoundness[0]}} px
     </div>
     <div class="col-6" style="color: white;">
-        <input type="range" min="0" max="200" class="mb-4" style="width: 80%;" [(ngModel)]="eachRoundness[1]" (input)="sliderInput()"> {{eachRoundness[1]}} px
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="eachRoundness[1]" (input)="sliderInput()"> {{eachRoundness[1]}} px
     </div>
     <div class="col-6" style="color: white;">
-        <input type="range" min="0" max="200" class="mb-4" style="width: 80%;" [(ngModel)]="eachRoundness[3]" (input)="sliderInput()"> {{eachRoundness[3]}} px
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="eachRoundness[3]" (input)="sliderInput()"> {{eachRoundness[3]}} px
     </div>
     <div class="col-6" style="color: white;">
-        <input type="range" min="0" max="200" class="mb-4" style="width: 80%;" [(ngModel)]="eachRoundness[2]" (input)="sliderInput()"> {{eachRoundness[2]}} px
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="eachRoundness[2]" (input)="sliderInput()"> {{eachRoundness[2]}} px
     </div>
 </div>
 <div class="grup1" style="padding: 40px;">
