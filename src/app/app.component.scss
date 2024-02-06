@@ -1,3 +1,62 @@
+.freeTest {
+    justify-content: center;
+    width: 100%;
+
+    .divButton {
+        background-color: rgb(129, 0, 143);
+
+        button {
+            background-color: rgb(0, 30, 112);
+            margin: 1rem;
+
+            border-radius: 10px;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.div3 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    div {
+        background-color: rgb(28, 123, 102);
+        border-radius: 4rem;
+        margin: 1rem;
+        padding: 1rem;
+
+        p {
+            padding-top: 1rem;
+            font-size: 1.5rem;
+        }
+
+        button {
+            margin: 5rem 5rem 0 0;
+            background-color: rgb(95, 5, 5);
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            padding: 0.5rem 1rem;
+        }
+    }
+}
+
 .containerWithDivs {
     display: flex;
     flex-wrap: wrap;
@@ -36,22 +95,6 @@
         font-size: 2rem;
         margin: 0.5rem;
         border: none;
-    }
-}
-
-.div3 {
-    div {
-        background-color: rgb(28, 123, 102);
-        border-radius: 4rem;
-        margin: 1rem;
-        padding: 1rem;
-
-        button {
-            margin: 5rem 5rem 0 0;
-            background-color: rgb(95, 5, 5);
-            border-radius: 0.5rem;
-            font-size: 1.5rem;
-        }
     }
 }
 

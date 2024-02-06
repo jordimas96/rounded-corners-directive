@@ -30,24 +30,35 @@ export class RoundedCornersDirective {
         const rectElement = e.getBoundingClientRect();
         const rectPare = e.parentElement!.getBoundingClientRect();
 
+        const estilElement = e.computedStyleMap();
+        
+        // border-radius que té l'element //
+        radis = [
+            (<any>estilElement.get("border-top-left-radius")!).value,
+            (<any>estilElement.get("border-top-right-radius")!).value,
+            (<any>estilElement.get("border-bottom-right-radius")!).value,
+            (<any>estilElement.get("border-bottom-left-radius")!).value,
+        ];
+
+
         if (radisPare === null) {
-            const estilElement = e.computedStyleMap();
             
             unit = (<any>estilElement.get("border-top-left-radius")!).unit;
 
-            radis = [
-                (<any>estilElement.get("border-top-left-radius")!).value,
-                (<any>estilElement.get("border-top-right-radius")!).value,
-                (<any>estilElement.get("border-bottom-right-radius")!).value,
-                (<any>estilElement.get("border-bottom-left-radius")!).value,
-            ];
+            
         } else {
+
+            // border-radius que tenia l'element abans de roundedCorners //
+            let radisOriginals = JSON.parse(e.getAttribute('aria-radius-originals') || '[]');
+            if (!radisOriginals.length) {
+                e.setAttribute('aria-radius-originals', JSON.stringify(radis));
+                radisOriginals = radis;
+            }
 
             const height = rectElement.height;
             const width = rectElement.width;
 
-            // let marges = this.getSumaMarges(estilElement, estilPare);
-
+            // Diferència posició del fill respecte el pare //
             let marges = [
                 Math.abs(rectPare.top - rectElement.top),
                 Math.abs(rectPare.right - rectElement.right),
@@ -59,19 +70,25 @@ export class RoundedCornersDirective {
             //   0    //     0   1     //
             // 3   1  //               //
             //   2    //     3   2     //
-            radis[0] = this.minim0(radisPare[0] - this.mesGran(marges[3], marges[0])); // top left //
-            radis[1] = this.minim0(radisPare[1] - this.mesGran(marges[0], marges[1])); // top right //
-            radis[2] = this.minim0(radisPare[2] - this.mesGran(marges[1], marges[2])); // bottom right //
-            radis[3] = this.minim0(radisPare[3] - this.mesGran(marges[2], marges[3])); // bottom left //
-            
 
-            // top right
-            // marges[1]>width/2 && marges[0]>height/2
+            // Si l'espai d'un element a la paret contrària és més gran de 1/3 de la mida de l'element, no s'aplica l'arrodoniment //
+            if (marges[3] < width / 2 || marges[0] < height / 2)
+                radis[0] = this.mesGran(radisOriginals[0], this.minim0(radisPare[0] - this.mesGran(marges[3], marges[0]))); // top left //
+
+            if (marges[0] < height / 2 || marges[1] < width / 2)
+                radis[1] = this.mesGran(radisOriginals[1], this.minim0(radisPare[1] - this.mesGran(marges[0], marges[1]))); // top right //
+
+            if (marges[1] < width / 2 || marges[2] < height / 2)
+                radis[2] = this.mesGran(radisOriginals[2], this.minim0(radisPare[2] - this.mesGran(marges[1], marges[2]))); // bottom right //
+
+            if (marges[2] < height / 2 || marges[3] < width / 2)
+                radis[3] = this.mesGran(radisOriginals[3], this.minim0(radisPare[3] - this.mesGran(marges[2], marges[3]))); // bottom left //
+
             
-            this.renderer.setStyle(e, "border-top-left-radius", radis[0] + unit);
-            this.renderer.setStyle(e, "border-top-right-radius", radis[1] + unit);
-            this.renderer.setStyle(e, "border-bottom-right-radius", radis[2] + unit);
-            this.renderer.setStyle(e, "border-bottom-left-radius", radis[3] + unit);
+            this.renderer.setStyle(e, "border-top-left-radius", (radis[0] !== undefined ? radis[0] : radisOriginals[0]) + unit);
+            this.renderer.setStyle(e, "border-top-right-radius", (radis[1] !== undefined ? radis[1] : radisOriginals[1]) + unit);
+            this.renderer.setStyle(e, "border-bottom-right-radius", (radis[2] !== undefined ? radis[2] : radisOriginals[2]) + unit);
+            this.renderer.setStyle(e, "border-bottom-left-radius", (radis[3] !== undefined ? radis[3] : radisOriginals[3]) + unit);
         }
             
         

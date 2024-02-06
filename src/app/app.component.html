@@ -1,32 +1,68 @@
 <h1 class="p-3">Rounded Corners Directive</h1>
 
-<h3 class="px-5">Container with divs inside</h3>
 
 
-<div class="row no-gutters" style="align-items: flex-start">
-    <div class="div3 row no-gutters mb-4">
-        <div>
-            <br>Before roundedCorners<br>
-            <button>Bottom left aligned, <br> rounded button</button>
-        </div>
-        <div roundedCorners>
-            <br>After roundedCorners<br>
-            <button>Bottom left aligned, <br> rounded button</button>
-        </div>
-        <div>
-            <br>Should be<br>
-            <button style="border-radius: 0.5rem 0.5rem 0.5rem 48px;">
-                Bottom left aligned, <br> rounded button
-            </button>
-        </div>
+<!-- <h3 class="px-5">Free test</h3>
+
+<div class="freeTest row no-gutters">
+
+    <div class="col-12 px-4">
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="freeTest_roundness"> {{freeTest_roundness}} px
     </div>
 
-    <div class="p-5" style="color: white; width: 100%;">
+    <div class="col-3"></div>
+    <div class="col-6 px-4">
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="margin[0]"> {{margin[0]}} px
+    </div>
+    <div class="col-3"></div>
+
+    <div class="col-6 px-4">
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="margin[3]"> {{margin[3]}} px
+    </div>
+    <div class="col-6 px-4">
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="margin[1]"> {{margin[1]}} px
+    </div>
+    <div class="col-3"></div>
+    <div class="col-6 px-4">
+        <input type="range" min="0" max="140" class="mb-4" style="width: 80%;" [(ngModel)]="margin[2]"> {{margin[2]}} px
+    </div>
+    <div class="col-3"></div>
+
+
+    <div class="divButton" roundedCorners
+        
+        [style.borderRadius]="freeTest_roundness+'px'">
+        <button [style.margin]="margin[0]+'px '+margin[1]+'px '+margin[2]+'px '+margin[3]+'px'">
+            Rounded <br> button
+        </button>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br> -->
+
+<div class="row no-gutters" style="align-items: flex-start;">
+
+    <h3 class="px-5" style="width: 100%;">Container with divs inside</h3>
+    
+    <h5 class="px-5">border-radius</h5>
+    <div class="px-5" style="color: white; width: 100%;">
         <input type="range" min="0" max="100" class="mb-4" style="width: 400px;" [(ngModel)]="divRoundness"> {{divRoundness}} px
     </div>
 
+    <div class="row no-gutters ml-4" style="width: 100%;">
+        <div class="col-12">
+            <h5 class="px-5">Transform X, Y</h5>
+        </div>
+        <div class="col-6 px-4">
+            <input type="range" min="0" max="200" class="mb-4" style="width: 80%;" [(ngModel)]="transform[0]"> {{transform[0]}} px
+        </div>
+        <div class="col-6 px-4">
+            <input type="range" min="0" max="200" class="mb-4" style="width: 80%;" [(ngModel)]="transform[1]"> {{transform[1]}} px
+        </div>
+    </div>
+
     <div class="containerWithDivs row no-gutters" style="background-color: rgb(90, 181, 255);" roundedCorners [style.borderRadius]="divRoundness+'px'">
-        <div class="a" style="background-color: #5f1fa3;">A</div>
+        <div class="a" style="background-color: #5f1fa3;" [style.transform]="'translate('+transform[0]+'px, '+transform[1]+'px)'">A</div>
         <div class="b" style="background-color: #c03c9d;">B</div>
         <div class="c" style="background-color: #b17a2d;">C</div>
         <div class="d" style="background-color: #8dc144;">D</div>
@@ -34,6 +70,32 @@
 
     <div class="mobil ml-4" roundedCorners [style.borderRadius]="divRoundness/3+'px'">
         <button class="save">Save</button>
+    </div>
+
+
+
+
+    <h3 class="p-5">Bottom left aligned, rounded button</h3>
+
+    <div class="div3 mb-4">
+        <div>
+            <p>Before roundedCorners</p>
+            <button>Bottom left aligned, <br> rounded button</button>
+        </div>
+        <div roundedCorners>
+            <p>After roundedCorners</p>
+            <button>Bottom left aligned, <br> rounded button</button>
+        </div>
+        <div>
+            <p>Should be</p>
+            <button style="border-radius: 0.5rem 0.5rem 0.5rem 48px;">
+                Bottom left aligned, <br> rounded button
+            </button>
+        </div>
+        <div roundedCorners>
+            <p>After roundedCorners</p>
+            <button class="px-3">Smaller button</button>
+        </div>
     </div>
 </div>
 

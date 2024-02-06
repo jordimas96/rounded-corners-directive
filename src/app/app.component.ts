@@ -17,6 +17,10 @@ declare var $: any;
 export class AppComponent {
     title = 'rounded-corners-test';
 
+    public margin: Array<number> = [40, 10, 10, 10];
+    public freeTest_roundness = 20;
+
+    public transform = [0, 0];
     public eachRoundness = [60, 60, 60, 60];
     
     public divRoundness = 30;
