@@ -1,15 +1,29 @@
 .freeTest {
-    justify-content: center;
+    // justify-content: center;
     width: 100%;
+
+    .divRange_x {}
+    .divRange_y {
+        transform-origin: 10% 50%;
+        transform: rotate(90deg);
+    }
 
     .divButton {
         background-color: rgb(129, 0, 143);
+        padding: 16px;
+        margin-left: 8rem;
+
+        width: 232px;
+        height: 232px;
 
         button {
             background-color: rgb(0, 30, 112);
-            margin: 1rem;
+            width: 100px;
+            height: 100px;
 
-            border-radius: 10px;
+            
+
+            border-radius: 0.5rem;
         }
     }
 

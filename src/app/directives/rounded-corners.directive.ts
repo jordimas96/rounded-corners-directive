@@ -72,18 +72,10 @@ export class RoundedCornersDirective {
             //   2    //     3   2     //
 
             // Si l'espai d'un element a la paret contrària és més gran de 1/3 de la mida de l'element, no s'aplica l'arrodoniment //
-            if (marges[3] < width / 2 || marges[0] < height / 2)
-                radis[0] = this.mesGran(radisOriginals[0], this.minim0(radisPare[0] - this.mesGran(marges[3], marges[0]))); // top left //
-
-            if (marges[0] < height / 2 || marges[1] < width / 2)
-                radis[1] = this.mesGran(radisOriginals[1], this.minim0(radisPare[1] - this.mesGran(marges[0], marges[1]))); // top right //
-
-            if (marges[1] < width / 2 || marges[2] < height / 2)
-                radis[2] = this.mesGran(radisOriginals[2], this.minim0(radisPare[2] - this.mesGran(marges[1], marges[2]))); // bottom right //
-
-            if (marges[2] < height / 2 || marges[3] < width / 2)
-                radis[3] = this.mesGran(radisOriginals[3], this.minim0(radisPare[3] - this.mesGran(marges[2], marges[3]))); // bottom left //
-
+            radis[0] = this.mesGran(radisOriginals[0], this.minim0(radisPare[0] - this.mesGran(marges[3], marges[0]))); // top left //
+            radis[1] = this.mesGran(radisOriginals[1], this.minim0(radisPare[1] - this.mesGran(marges[0], marges[1]))); // top right //
+            radis[2] = this.mesGran(radisOriginals[2], this.minim0(radisPare[2] - this.mesGran(marges[1], marges[2]))); // bottom right //
+            radis[3] = this.mesGran(radisOriginals[3], this.minim0(radisPare[3] - this.mesGran(marges[2], marges[3]))); // bottom left //
             
             this.renderer.setStyle(e, "border-top-left-radius", (radis[0] !== undefined ? radis[0] : radisOriginals[0]) + unit);
             this.renderer.setStyle(e, "border-top-right-radius", (radis[1] !== undefined ? radis[1] : radisOriginals[1]) + unit);
