@@ -27,11 +27,11 @@ export class RoundedCornersDirective {
         // let unit; // Suposant que tot estigui en les mateixes unitats //
         let radis: Array<any> = [];
         
-        const estilElement = e.computedStyleMap();
-        const estilPare = e.parentElement!.computedStyleMap();
-
+        const rectElement = e.getBoundingClientRect();
+        const rectPare = e.parentElement!.getBoundingClientRect();
 
         if (radisPare === null) {
+            const estilElement = e.computedStyleMap();
             
             unit = (<any>estilElement.get("border-top-left-radius")!).unit;
 
@@ -42,9 +42,20 @@ export class RoundedCornersDirective {
                 (<any>estilElement.get("border-bottom-left-radius")!).value,
             ];
         } else {
+
+            const height = rectElement.height;
+            const width = rectElement.width;
+
+            // let marges = this.getSumaMarges(estilElement, estilPare);
+
+            let marges = [
+                Math.abs(rectPare.top - rectElement.top),
+                Math.abs(rectPare.right - rectElement.right),
+                Math.abs(rectPare.bottom - rectElement.bottom),
+                Math.abs(rectPare.left - rectElement.left),
+            ];
             
-            let marges = this.getSumaMarges(estilElement, estilPare);            
-            // espais // border-radius //
+            // marges // border-radius //
             //   0    //     0   1     //
             // 3   1  //               //
             //   2    //     3   2     //
@@ -53,6 +64,9 @@ export class RoundedCornersDirective {
             radis[2] = this.minim0(radisPare[2] - this.mesGran(marges[1], marges[2])); // bottom right //
             radis[3] = this.minim0(radisPare[3] - this.mesGran(marges[2], marges[3])); // bottom left //
             
+
+            // top right
+            // marges[1]>width/2 && marges[0]>height/2
             
             this.renderer.setStyle(e, "border-top-left-radius", radis[0] + unit);
             this.renderer.setStyle(e, "border-top-right-radius", radis[1] + unit);
