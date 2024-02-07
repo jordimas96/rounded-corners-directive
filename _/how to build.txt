@@ -1,1 +1,1 @@
-ng build --base-href /rounded-corners-test/
+ng build --base-href /rounded-corners-directive/

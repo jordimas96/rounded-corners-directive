@@ -17,7 +17,7 @@ declare var $: any;
     styleUrl: './app.component.scss'
 })
 export class AppComponent {
-    title = 'rounded-corners-test';
+    title = 'rounded-corners-directive';
 
     public freeTest_roundness = 60;
 
