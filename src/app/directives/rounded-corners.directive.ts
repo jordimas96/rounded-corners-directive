@@ -84,9 +84,8 @@ export class RoundedCornersDirective {
 
         // Llancem la funcio pels fills //
         e.childNodes.forEach((e: ChildNode) => {
-            if (e.nodeValue) return;
-
-            this.roundCorners(<HTMLElement>e, radis, unit);
+            if (e.nodeType == Node.ELEMENT_NODE)
+                this.roundCorners(<HTMLElement>e, radis, unit);
         });
     
 
