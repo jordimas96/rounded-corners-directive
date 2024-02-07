@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { RoundedCornersDirective } from './directives/rounded-corners.directive';
 import { FormsModule } from '@angular/forms';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+
 
 declare var $: any;
 
@@ -10,7 +12,7 @@ declare var $: any;
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [CommonModule, RouterOutlet, RoundedCornersDirective, FormsModule],
+    imports: [CommonModule, RouterOutlet, RoundedCornersDirective, FormsModule, DragDropModule],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
 })
@@ -18,26 +20,15 @@ export class AppComponent {
     title = 'rounded-corners-test';
 
     public freeTest_roundness = 60;
-    public freeTest_x = 0;
-    public freeTest_y = 0;
 
-    
 
-    public transform = [0, 0];
+
     public eachRoundness = [60, 60, 60, 60];
     
     public divRoundness = 30;
     
 
-    ngOnInit() {
-        // $(".grup1 *").each((i:any, e:any) => {
-        //     let h = Math.random() * 360;
-        //     let s = Math.random() * 100;
-        //     let l = Math.random() * 50;
-
-        //     $(e).css("background", `hsl(${h}, 20%, ${l}%)`);
-        // });
-    }
+    ngOnInit() { }
 
     sliderInput() {
         // $(".div2").css("border-radius", this.roundness + "px");

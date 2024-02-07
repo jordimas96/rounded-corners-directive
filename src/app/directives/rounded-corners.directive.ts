@@ -55,9 +55,6 @@ export class RoundedCornersDirective {
                 radisOriginals = radis;
             }
 
-            const height = rectElement.height;
-            const width = rectElement.width;
-
             // Diferència posició del fill respecte el pare //
             let marges = [
                 Math.abs(rectPare.top - rectElement.top),
