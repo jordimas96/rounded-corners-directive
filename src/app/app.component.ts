@@ -27,6 +27,7 @@ export class AppComponent {
     
     public divRoundness = 30;
     
+    public input = "30px 50px 30px 50px";
 
     ngOnInit() { }
 

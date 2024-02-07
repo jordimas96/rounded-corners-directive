@@ -1,199 +1,151 @@
-.freeTest {
-    width: 100%;
+.grup4 {
+    margin-bottom: 10rem;
+    
+    .freeTest {
+        width: 100%;
 
 
-    .divButton {
-        background-color: rgb(129, 0, 143);
-        width: 232px;
-        height: 232px;
+        .divButton {
+            background-color: rgb(129, 0, 143);
+            width: 232px;
+            height: 232px;
 
-        margin-left: 8rem;
-
-
-        button {
-            background-color: rgb(0, 30, 112);
-            width: 100px;
-            height: 75px;
-
-            cursor: move;
-
-            border-radius: 0.5rem;
-        }
-    }
-
-}
+            margin-left: 8rem;
 
 
+            button {
+                background-color: rgb(0, 30, 112);
+                width: 100px;
+                height: 75px;
 
+                cursor: move;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.div3 {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-
-    div {
-        background-color: rgb(28, 123, 102);
-        border-radius: 4rem;
-        margin: 1rem;
-        padding: 1rem;
-
-        p {
-            padding-top: 1rem;
-            font-size: 1.5rem;
+                border-radius: 0.5rem;
+            }
         }
 
-        button {
-            margin: 5rem 5rem 0 0;
-            background-color: rgb(95, 5, 5);
-            border-radius: 0.5rem;
-            font-size: 1.5rem;
-            padding: 0.5rem 1rem;
-        }
     }
 }
 
-.containerWithDivs {
-    display: flex;
-    flex-wrap: wrap;
-    width: fit-content;
 
-    width: 400px;
 
-    margin-left: 4rem;
-
-    div {
-        width: 180px;
-        height: 180px;
-        margin: 10px;
-        text-align: center;
-        font-size: 2rem;
+.grup3 {
+    margin-bottom: 10rem;
+    
+    .containerWithDivs {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 1rem;
-    }
-}
-
-.mobil {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background: linear-gradient(45deg, rgb(251, 96, 96), rgb(255, 238, 154));
-
-    .save {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        background-color: rgb(10, 132, 255);
+        flex-wrap: wrap;
         
-        font-size: 2rem;
-        margin: 0.5rem;
-        border: none;
-    }
-}
+        min-width: 400px;
+        width: 400px;
 
 
-button {
-    border: none;
-    outline: none;
-}
-
-div.grup1 {
-    background-color: #732b2b;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    // border-radius: 120px;
-
-
-
-
-
-    div {
-        border-radius: 60px;
-        background-color: #ffff9b;
-        margin: 15px;
-
-        button {
-            background-color: #00680e;
-            border: none;
-            padding: 5rem;
+        div {
+            width: 180px;
+            height: 180px;
+            margin: 10px;
+            text-align: center;
             font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
         }
     }
 
+    .mobil {
+        position: relative;
+        width: 300px;
+        height: 400px;
+        background: linear-gradient(45deg, rgb(251, 96, 96), rgb(255, 238, 154));
 
-
-
-
-
-
-
-
-
-
-
-
+        .save {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background-color: rgb(10, 132, 255);
+            
+            font-size: 2rem;
+            margin: 0.5rem;
+            border: none;
+        }
+    }
 }
+
+
 
 .grup2 {
-    .pare {
-        border-radius: 100px;
-        // border-radius: 160px 80px 40px 20px;
-        padding-top: 80px !important;
-        padding-bottom: 80px !important;
+    margin-bottom: 10rem;
 
-        div.a {
-            padding: 10px 3.5px !important;
-            div.b {
-                margin: 3.5px 10px !important;
-                padding: 20px 7px !important;
-                button.c {
-                    margin: 7px 20px !important;
-                    width: -webkit-fill-available;
+    .div3 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    
+        div {
+            background-color: rgb(28, 123, 102);
+            border-radius: 4rem;
+            margin: 1rem;
+            padding: 1rem;
+    
+            p {
+                padding-top: 1rem;
+                font-size: 1.5rem;
+            }
+    
+            button {
+                margin: 5rem 5rem 0 0;
+                background-color: rgb(95, 5, 5);
+                border-radius: 0.5rem;
+                font-size: 1.5rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    }
+}
+
+
+
+.grup1 {
+
+    .divs1 {
+        // background-color: #732b2b;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+
+        .div2 {
+            border-radius: 60px;
+            margin: 1rem;
+            background-color: #ffff9b;
+
+            button {
+                background-color: #00680e;
+                border: none;
+                padding: 5rem;
+                font-size: 2rem;
+            }
+            .divInput {
+                padding: 1rem;
+                background-color: #2a891f;
+                padding: 5rem;
+                
+                input {
+                    background-color: #00680e;
+                    
+                    font-family: "Consolas";
+                    // border: none;
+                    outline: none;
+                    font-size: 2rem;
+                    text-align: center;
                 }
             }
         }
     }
+}
 
-    .cards {
-        .card {
-
-            background-color: #444;
-            margin: 1rem;
-
-            button {
-                padding: 5rem 10rem;
-                font-size: 1.3rem;
-
-                border: 0;
-            }
-
-        }
-
-    }
-
-    h1 {
-        margin-left: 3rem;
-    }
-    .custom-border {
-        border: 2px solid #333;
-        padding: 1rem;
-        margin: 1rem;
-        display: inline-block;
-    }
+button {
+    border: none;
+    outline: none;
 }
