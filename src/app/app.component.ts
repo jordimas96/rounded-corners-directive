@@ -25,7 +25,7 @@ export class AppComponent {
 
     public eachRoundness = [60, 60, 60, 60];
     
-    public divRoundness = 30;
+    public divRoundness = 100;
     
     public input = "30px 50px 30px 50px";
 
