@@ -3,7 +3,6 @@
     padding: 3rem 0 6rem;
 
     background-color: hsl(180, 98%, 11%);
-
     color: hsl(167, 100%, 87%);
     
     div.row {
@@ -11,16 +10,15 @@
         justify-content: center;
     }
 
-    .div3 {
+    .divs {
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: center;
+        gap: 1rem;
     
         div {
-            background-color: hsl(167, 63%, 30%);
             border-radius: 4rem;
-            margin: 1rem;
             padding: 1rem;
     
             p {
@@ -30,10 +28,24 @@
     
             button {
                 margin: 5rem 5rem 0 0;
-                background-color: hsl(150, 90%, 15%);
                 border-radius: 0.5rem;
                 font-size: 1.5rem;
                 padding: 0.5rem 1rem;
+            }
+
+            &.bad {
+                background-color: hsl(0, 45%, 51%);
+                color: hsl(0, 100%, 93%);
+                button {
+                    background-color: hsl(0, 83%, 21%);
+                }
+            }
+            &.good {
+                background-color: hsl(167, 63%, 30%);
+                color: inherit;
+                button {
+                    background-color: hsl(150, 90%, 15%);
+                }
             }
         }
     }
@@ -62,11 +74,10 @@
     padding: 3rem 0 6rem;
 
     background-color: hsl(295, 100%, 10%);
-
     color: hsl(283, 100%, 90%);
+    accent-color: hsl(282, 100%, 77%);
     
     .freeTest {
-        width: 100%;
 
 
         .divButton {
@@ -93,28 +104,61 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .grup2 {
+    padding: 3rem 0 6rem;
+    
+    background-color: hsl(53, 100%, 13%);
+    color: hsl(60, 100%, 92%);
+    accent-color: hsl(60, 100%, 65%);
+
+    .divs1 {
+        // background-color: #732b2b;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+
+        .div2 {
+            border-radius: 60px;
+            margin: 1rem;
+            background-color: hsl(60, 100%, 80%);
+
+            button {
+                background-color: hsl(52, 100%, 22%);
+                border: none;
+                padding: 4rem;
+                font-size: 1.5rem;
+            }
+            .divInput {
+                padding: 1rem;
+                background-color: hsl(52, 100%, 27%);
+                padding: 4rem 0.25rem;
+                
+                input {
+                    background-color: hsl(52, 100%, 22%);
+                    
+                    font-family: "Consolas";
+                    // border: none;
+                    outline: none;
+                    font-size: 1.2rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+.grup1 {
     padding: 3rem 0 6rem;
 
     background-color: hsl(206, 100%, 10%);
-
     color: hsl(200, 100%, 87%);
+    accent-color: hsl(200, 100%, 72%);
 
     
     align-items: flex-start;
@@ -139,7 +183,7 @@
         div {
             display: none;
             width: 46%;
-            height: 46%;
+            height: 29.5%;
             margin: 1.5%;
             text-align: center;
             font-size: 2rem;
@@ -153,10 +197,12 @@
 
             // backdrop-filter: blur(20px);
 
-            &.a { background-color: hsl(202, 100%, 50%) }
-            &.b { background-color: hsl(212, 100%, 50%) }
-            &.c { background-color: hsl(222, 100%, 50%) }
-            &.d { background-color: hsl(232, 100%, 50%) }
+            &.a { background-color: hsl(202, 100%, 50%); width: 34%; }
+            &.b { background-color: hsl(212, 100%, 50%); width: 57%; }
+            &.c { background-color: hsl(222, 100%, 52%); width: 46%; }
+            &.d { background-color: hsl(232, 100%, 55%); width: 46%; }
+            &.e { background-color: hsl(252, 100%, 52%); width: 57%; }
+            &.f { background-color: hsl(262, 100%, 50%); width: 34%; }
         }
     }
 
@@ -195,74 +241,6 @@
         .save {
             bottom: 0;
             color: #007aff;
-        }
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.grup1 {
-    padding: 3rem 0 6rem;
-    
-    background-color: hsl(53, 100%, 13%);
-    color: hsl(60, 100%, 92%);
-
-    .divs1 {
-        // background-color: #732b2b;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        justify-content: center;
-
-        .div2 {
-            border-radius: 60px;
-            margin: 1rem;
-            background-color: hsl(60, 100%, 80%);
-
-            button {
-                background-color: hsl(52, 100%, 22%);
-                border: none;
-                padding: 4rem;
-                font-size: 1.5rem;
-            }
-            .divInput {
-                padding: 1rem;
-                background-color: hsl(52, 100%, 27%);
-                padding: 4rem 0.25rem;
-                
-                input {
-                    background-color: hsl(52, 100%, 22%);
-                    
-                    font-family: "Consolas";
-                    // border: none;
-                    outline: none;
-                    font-size: 1.2rem;
-                    text-align: center;
-                }
-            }
         }
     }
 }

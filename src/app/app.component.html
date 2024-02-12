@@ -2,10 +2,10 @@
     and after that I eventually turned it into some presentable sandbox page,
     but its main point is just to show some usage examples -->
 
-<h1 class="titol p-3">Rounded Corners Directive</h1>
+<h1 class="titol p-3 text-center">Rounded Corners Directive</h1>
 
 
-<h5 class="subtitol p-4">This is a small website to develop and test a new directive for angular that will automatically adapt the border radius of the children to match the one from the parents, calculating all the spacing along the way.</h5>
+<h5 class="subtitol p-4 text-justify">This is a small website to develop and test a new directive for angular that will automatically adapt the border radius of the children to match the one from the parents, calculating all the spacing along the way.</h5>
 
 
 
@@ -14,24 +14,24 @@
     <div class="row no-gutters px-4">
 
 
-        <h3 class="px-5">Bottom left aligned, rounded button</h3>
+        <h3 class="w-100 text-center px-3 mb-5">What does the directive do?</h3>
 
-        <div class="div3 mb-4">
-            <div>
+        <div class="divs mb-4">
+            <div class="bad">
                 <p class="text-center">Before roundedCorners</p>
                 <button>Bottom left aligned, <br> rounded button</button>
             </div>
-            <div roundedCorners>
+            <div class="good" roundedCorners>
                 <p class="text-center">After roundedCorners</p>
                 <button>Bottom left aligned, <br> rounded button</button>
             </div>
-            <div>
-                <p class="text-center">Should be</p>
+            <div class="good">
+                <p class="text-center">Should be (manually set)</p>
                 <button style="border-radius: 0.5rem 0.5rem 0.5rem 48px;">
                     Bottom left aligned, <br> rounded button
                 </button>
             </div>
-            <div roundedCorners>
+            <div class="good" roundedCorners>
                 <p class="text-center">After roundedCorners with <br> a smaller button</p>
                 <button class="px-3">Smaller button</button>
             </div>
@@ -54,7 +54,7 @@
 
 
 <div class="grup3 px-3">
-    <h3 class="text-center">Free test</h3>
+    <h3 class="px-3 text-center">Free test</h3>
 
 
     <div class="freeTest row no-gutters">
@@ -76,10 +76,44 @@
 
 
 
+<!-- ------------------------------------------- -->
 
 
 
 
+
+<div class="grup2">
+    <h3 class="px-3 text-center">How concentric rounded corners work with different paddings</h3>
+    <div class="row no-gutters p-3">
+        <div class="col-6 text-center">
+            <input type="range" min="0" max="140" class="mb-4" style="width: 70%;" [(ngModel)]="eachRoundness[0]" (input)="sliderInput()">&nbsp; {{eachRoundness[0]}} px
+        </div>
+        <div class="col-6 text-center">
+            <input type="range" min="0" max="140" class="mb-4" style="width: 70%;" [(ngModel)]="eachRoundness[1]" (input)="sliderInput()">&nbsp; {{eachRoundness[1]}} px
+        </div>
+        <div class="col-6 text-center">
+            <input type="range" min="0" max="140" class="mb-4" style="width: 70%;" [(ngModel)]="eachRoundness[3]" (input)="sliderInput()">&nbsp; {{eachRoundness[3]}} px
+        </div>
+        <div class="col-6 text-center">
+            <input type="range" min="0" max="140" class="mb-4" style="width: 70%;" [(ngModel)]="eachRoundness[2]" (input)="sliderInput()">&nbsp; {{eachRoundness[2]}} px
+        </div>
+    </div>
+    <div class="divs1">
+        <div class="div2" style="padding: 30px;" roundedCorners><button>30px</button></div>
+        <div class="div2" style="padding: 30px 6px 6px 6px;" roundedCorners><button>30px 6px 6px 6px</button></div>
+        <div class="div2" style="padding: 6px 30px 6px 6px;" roundedCorners><button>6px 30px 6px 6px</button></div>
+        <div class="div2" style="padding: 50px 30px;" roundedCorners><button>50px 30px</button></div>
+        <div class="div2" style="padding: 30px 50px;" roundedCorners><button>30px 50px</button></div>
+        <div class="div2" style="padding: 6px 30px;" roundedCorners><button>6px 30px</button></div>
+        <div class="div2" style="padding: 30px 6px;" roundedCorners><button>30px 6px</button></div>
+
+        <div class="div2" [style.padding]="input" roundedCorners>
+            <div class="divInput">
+                <input [(ngModel)]="input">
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
@@ -87,16 +121,9 @@
 
 
 
+<div class="grup1 row no-gutters px-4">
 
-
-
-
-
-
-
-<div class="grup2 row no-gutters px-4">
-
-    <h3 class="w-100 text-center">Container with draggable divs inside</h3>
+    <h3 class="w-100 px-3 text-center">Some use cases</h3>
     
     <h5 class="mt-3">border-radius</h5>
     <div style="color: white; width: 100%;">
@@ -110,6 +137,8 @@
         <div class="b" cdkDrag cdkDragBoundary=".containerWith4Divs">B</div>
         <div class="c" cdkDrag cdkDragBoundary=".containerWith4Divs">C</div>
         <div class="d" cdkDrag cdkDragBoundary=".containerWith4Divs">D</div>
+        <div class="e" cdkDrag cdkDragBoundary=".containerWith4Divs">E</div>
+        <div class="f" cdkDrag cdkDragBoundary=".containerWith4Divs">F</div>
     </div>
 
     <div class="mobil mt-3" roundedCorners [style.borderRadius]="divRoundness/2+'px'">
@@ -121,51 +150,4 @@
         </button>
     </div>
 
-</div>
-
-
-
-
-
-<!-- ------------------------------------------- -->
-
-
-
-
-
-
-
-
-
-<div class="grup1">
-    <h3 class="px-5 text-center">How corners work with different paddings</h3>
-    <div class="row no-gutters p-3">
-        <div class="col-6">
-            <input type="range" min="0" max="140" class="mb-4" style="width: 70%;" [(ngModel)]="eachRoundness[0]" (input)="sliderInput()">&nbsp; {{eachRoundness[0]}} px
-        </div>
-        <div class="col-6">
-            <input type="range" min="0" max="140" class="mb-4" style="width: 70%;" [(ngModel)]="eachRoundness[1]" (input)="sliderInput()">&nbsp; {{eachRoundness[1]}} px
-        </div>
-        <div class="col-6">
-            <input type="range" min="0" max="140" class="mb-4" style="width: 70%;" [(ngModel)]="eachRoundness[3]" (input)="sliderInput()">&nbsp; {{eachRoundness[3]}} px
-        </div>
-        <div class="col-6">
-            <input type="range" min="0" max="140" class="mb-4" style="width: 70%;" [(ngModel)]="eachRoundness[2]" (input)="sliderInput()">&nbsp; {{eachRoundness[2]}} px
-        </div>
-    </div>
-    <div class="divs1">
-        <div class="div2" style="padding: 30px;" roundedCorners><button>30px</button></div>
-        <div class="div2" style="padding: 6px 30px;" roundedCorners><button>6px 30px</button></div>
-        <div class="div2" style="padding: 30px 6px;" roundedCorners><button>30px 6px</button></div>
-        <div class="div2" style="padding: 30px 6px 6px 6px;" roundedCorners><button>30px 6px 6px 6px</button></div>
-        <div class="div2" style="padding: 6px 30px 6px 6px;" roundedCorners><button>6px 30px 6px 6px</button></div>
-        <div class="div2" style="padding: 50px 30px;" roundedCorners><button>50px 30px</button></div>
-        <div class="div2" style="padding: 30px 50px;" roundedCorners><button>30px 50px</button></div>
-
-        <div class="div2" [style.padding]="input" roundedCorners>
-            <div class="divInput">
-                <input [(ngModel)]="input">
-            </div>
-        </div>
-    </div>
 </div>
