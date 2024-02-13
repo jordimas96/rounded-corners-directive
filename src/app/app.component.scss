@@ -165,12 +165,7 @@
     
     column-gap: 2rem;
 
-    .containerWith4Divs {
-        display: flex;
-        flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        
+    .containerWith6Divs {
         
         width: 350px;
         height: 350px;
@@ -180,38 +175,40 @@
         background-color: hsl(198, 15%, 67%);
         
 
-        div {
-            display: none;
-            width: 46%;
-            height: 29.5%;
-            margin: 1.5%;
-            text-align: center;
-            font-size: 2rem;
-            cursor: move;
-            border-radius: 0.5rem;
-
+        > div {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: space-between;
+            gap: 0.5rem;
 
-            // backdrop-filter: blur(20px);
+            > div {
+                width: calc(50% - 0.25rem);
+                height: calc(33.333% - 0.333rem);
 
-            &.a { background-color: hsl(202, 100%, 50%); width: 34%; }
-            &.b { background-color: hsl(212, 100%, 50%); width: 57%; }
-            &.c { background-color: hsl(222, 100%, 52%); width: 46%; }
-            &.d { background-color: hsl(232, 100%, 55%); width: 46%; }
-            &.e { background-color: hsl(252, 100%, 52%); width: 57%; }
-            &.f { background-color: hsl(262, 100%, 50%); width: 34%; }
+                text-align: center;
+                font-size: 2rem;
+                cursor: move;
+                border-radius: 0.5rem;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+
+                // backdrop-filter: blur(20px);
+
+                &.a { background-color: hsl(202, 100%, 50%); width: calc(40% - 0.25rem); }
+                &.b { background-color: hsl(212, 100%, 50%); width: calc(60% - 0.25rem); }
+                &.c { background-color: hsl(222, 100%, 52%); width: calc(50% - 0.25rem); }
+                &.d { background-color: hsl(232, 100%, 55%); width: calc(50% - 0.25rem); }
+                &.e { background-color: hsl(252, 100%, 52%); width: calc(60% - 0.25rem); }
+                &.f { background-color: hsl(262, 100%, 50%); width: calc(40% - 0.25rem); }
+            }
         }
     }
 
     .mobil {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        gap: 0.5rem;
-
         width: 250px;
         height: 400px;
         margin: auto;
@@ -223,24 +220,31 @@
         background-color: hsl(198, 15%, 67%);
 
 
-        .option {
-            overflow: hidden;
-            background-color: hsl(198, 0%, 91%);
-            
-            font-size: 1.6rem;
-            padding: 0.5rem 0 0.5rem;
-            border-radius: 0.7rem;
+        > div {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            gap: 0.5rem;
 
-            z-index: 10;
-            cursor: move;
-        }
-        .cancel {
-            bottom: 3.8rem;
-            color: #ff3b30;
-        }
-        .save {
-            bottom: 0;
-            color: #007aff;
+            .option {
+                overflow: hidden;
+                background-color: hsl(198, 0%, 91%);
+                
+                font-size: 1.6rem;
+                padding: 0.5rem 0 0.5rem;
+                border-radius: 0.7rem;
+
+                z-index: 10;
+                cursor: move;
+            }
+            .cancel {
+                bottom: 3.8rem;
+                color: #ff3b30;
+            }
+            .save {
+                bottom: 0;
+                color: #007aff;
+            }
         }
     }
 }

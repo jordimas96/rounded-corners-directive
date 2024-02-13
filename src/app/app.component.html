@@ -61,13 +61,15 @@
 
         <h5 class="mt-3">border-radius</h5>
         <div class="col-12">
-            <input type="range" min="0" max="67" class="mb-4" style="width: 80%" [(ngModel)]="freeTest_roundness">&nbsp; {{freeTest_roundness}} px
+            <input type="range" min="0" max="75" class="mb-4" style="width: 80%" [(ngModel)]="freeTest_roundness">&nbsp; {{freeTest_roundness}} px
         </div>
 
-        <div class="divButton" roundedCorners [style.borderRadius]="freeTest_roundness+'px'">
-            <button cdkDrag cdkDragBoundary=".divButton" class="m-3">
-                Drag <br> me
-            </button>
+        <div class="divButton p-2" roundedCorners [style.borderRadius]="freeTest_roundness+'px'">
+            <div class="h-100">
+                <button cdkDrag cdkDragBoundary=".divButton > div">
+                    Drag <br> me
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -132,22 +134,26 @@
 
 
 
-    <div class="containerWith4Divs row no-gutters mt-3" roundedCorners [style.borderRadius]="divRoundness+'px'">
-        <div class="a" cdkDrag cdkDragBoundary=".containerWith4Divs">A</div>
-        <div class="b" cdkDrag cdkDragBoundary=".containerWith4Divs">B</div>
-        <div class="c" cdkDrag cdkDragBoundary=".containerWith4Divs">C</div>
-        <div class="d" cdkDrag cdkDragBoundary=".containerWith4Divs">D</div>
-        <div class="e" cdkDrag cdkDragBoundary=".containerWith4Divs">E</div>
-        <div class="f" cdkDrag cdkDragBoundary=".containerWith4Divs">F</div>
+    <div class="containerWith6Divs mt-3 p-2" roundedCorners [style.borderRadius]="divRoundness+'px'">
+        <div class="row no-gutters h-100">
+            <div class="a" cdkDrag cdkDragBoundary=".containerWith6Divs > div">A</div>
+            <div class="b" cdkDrag cdkDragBoundary=".containerWith6Divs > div">B</div>
+            <div class="c" cdkDrag cdkDragBoundary=".containerWith6Divs > div">C</div>
+            <div class="d" cdkDrag cdkDragBoundary=".containerWith6Divs > div">D</div>
+            <div class="e" cdkDrag cdkDragBoundary=".containerWith6Divs > div">E</div>
+            <div class="f" cdkDrag cdkDragBoundary=".containerWith6Divs > div">F</div>
+        </div>
     </div>
 
-    <div class="mobil mt-3" roundedCorners [style.borderRadius]="divRoundness/2+'px'">
-        <button class="option cancel shadow-3" cdkDrag cdkDragBoundary=".mobil" cdkDragLockAxis="y">
-            Cancel
-        </button>
-        <button class="option save shadow-3" cdkDrag cdkDragBoundary=".mobil" cdkDragLockAxis="y">
-            Save
-        </button>
+    <div class="mobil mt-3 p-2" roundedCorners [style.borderRadius]="divRoundness/2+'px'">
+        <div class="h-100">
+            <button class="option cancel shadow-3" cdkDrag cdkDragBoundary=".mobil > div" cdkDragLockAxis="y">
+                Cancel
+            </button>
+            <button class="option save shadow-3" cdkDrag cdkDragBoundary=".mobil > div" cdkDragLockAxis="y">
+                Save
+            </button>
+        </div>
     </div>
 
 </div>
