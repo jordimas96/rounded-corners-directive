@@ -136,6 +136,7 @@
                 
                 input {
                     background-color: hsl(52, 100%, 22%);
+                    border-color: hsl(60, 100%, 25%);
                     
                     font-family: "Consolas";
                     // border: none;
@@ -244,6 +245,49 @@
             .save {
                 bottom: 0;
                 color: #007aff;
+            }
+        }
+    }
+
+    .modal-missatge {
+        background-color: hsl(198, 0%, 91%);
+        color: #444;
+        border-radius: 0.5rem;
+
+        .groupTitle {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+
+            h3 {}
+            .badge {
+                background-color: #ff8000;
+                color: white;
+                font-size: 1rem;
+            }
+        }
+        p {}
+        .botons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: space-between;
+
+            button {
+                padding: 0.25rem 1.5rem;
+                font-size: 1.5rem;
+                border-radius: 0.25rem;
+                border: 2px solid;
+
+                &.cancel {
+                    color: rgb(118, 41, 191);
+                    background-color: transparent;
+                }
+                &.ok {
+                    background-color: rgb(118, 41, 191);
+                    color: white;
+                    border-color: transparent;
+                }
             }
         }
     }

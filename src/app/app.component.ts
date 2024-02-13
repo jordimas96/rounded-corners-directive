@@ -26,6 +26,8 @@ export class AppComponent {
     public eachRoundness = [60, 60, 60, 60];
     
     public divRoundness = 70;
+    public modal_divRoundness = 30;
+    public modal_all4borders = true;
     
     public input = "30px 50px 30px 50px";
 

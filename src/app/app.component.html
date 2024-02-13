@@ -1,4 +1,5 @@
-<!-- Do not check this HTML structure, I made it quick and disorganized in order to test the directive,
+<!-- Do not review this HTML structure, I made it quick and disorganized,
+    without paying atention to the structure nor the spacing, just in order to test the directive,
     and after that I eventually turned it into some presentable sandbox page,
     but its main point is just to show some usage examples -->
 
@@ -133,26 +134,59 @@
     </div>
 
 
-
-    <div class="containerWith6Divs mt-3 p-2" roundedCorners [style.borderRadius]="divRoundness+'px'">
-        <div class="row no-gutters h-100">
-            <div class="a" cdkDrag cdkDragBoundary=".containerWith6Divs > div">A</div>
-            <div class="b" cdkDrag cdkDragBoundary=".containerWith6Divs > div">B</div>
-            <div class="c" cdkDrag cdkDragBoundary=".containerWith6Divs > div">C</div>
-            <div class="d" cdkDrag cdkDragBoundary=".containerWith6Divs > div">D</div>
-            <div class="e" cdkDrag cdkDragBoundary=".containerWith6Divs > div">E</div>
-            <div class="f" cdkDrag cdkDragBoundary=".containerWith6Divs > div">F</div>
+    <div class="row no-gutters">
+        <div class="col-12 col-md-6 text-center">
+            <div class="containerWith6Divs mt-3 p-2 mx-auto" roundedCorners [style.borderRadius]="divRoundness+'px'">
+                <div class="row no-gutters h-100">
+                    <div class="a" cdkDrag cdkDragBoundary=".containerWith6Divs > div">A</div>
+                    <div class="b" cdkDrag cdkDragBoundary=".containerWith6Divs > div">B</div>
+                    <div class="c" cdkDrag cdkDragBoundary=".containerWith6Divs > div">C</div>
+                    <div class="d" cdkDrag cdkDragBoundary=".containerWith6Divs > div">D</div>
+                    <div class="e" cdkDrag cdkDragBoundary=".containerWith6Divs > div">E</div>
+                    <div class="f" cdkDrag cdkDragBoundary=".containerWith6Divs > div">F</div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="mobil mt-3 p-2" roundedCorners [style.borderRadius]="divRoundness/2+'px'">
-        <div class="h-100">
-            <button class="option cancel shadow-3" cdkDrag cdkDragBoundary=".mobil > div" cdkDragLockAxis="y">
-                Cancel
-            </button>
-            <button class="option save shadow-3" cdkDrag cdkDragBoundary=".mobil > div" cdkDragLockAxis="y">
-                Save
-            </button>
+        <div class="col-12 col-md-6">
+            <div class="mobil mt-3 p-2 mx-auto" roundedCorners [style.borderRadius]="divRoundness/2+'px'">
+                <div class="h-100">
+                    <button class="option cancel shadow-3" cdkDrag cdkDragBoundary=".mobil > div" cdkDragLockAxis="y">
+                        Cancel
+                    </button>
+                    <button class="option save shadow-3" cdkDrag cdkDragBoundary=".mobil > div" cdkDragLockAxis="y">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <h5 class="mt-3">border-radius</h5>
+            <div style="color: white; width: 100%;">
+                <input type="range" min="0" max="40" class="mb-4" style="width: 80%;" [(ngModel)]="modal_divRoundness">&nbsp; {{modal_divRoundness}} px
+            </div>
+            <label><input type="checkbox" [(ngModel)]="modal_all4borders"> Round all 4 corners</label>
+        </div>
+
+        <div class="col-12 col-md-9">
+            <div class="modal-missatge p-3 mt-3"
+                [style.borderRadius]="modal_divRoundness+'px'"
+                roundedCorners
+                [roundAllCorners]="modal_all4borders"
+            >
+                <div class="groupTitle">
+                    <h3 class="mb-0 pl-3">Lorem ipsum</h3>
+                    <div class="badge mt-1 mr-1">New</div>
+                </div>
+                <hr>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <!-- <hr> -->
+                <div class="botons">
+                    <button class="cancel">Cancel</button>
+                    <button class="ok">Ok</button>
+                </div>
+            </div>
         </div>
     </div>
 
