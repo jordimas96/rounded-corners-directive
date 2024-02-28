@@ -10,6 +10,16 @@
         justify-content: center;
     }
 
+    .code {
+        min-width: 10rem;
+        p {}
+        img {
+            width: -webkit-fill-available;
+            max-width: 40rem;
+            border-radius: 1rem;
+        }
+    }
+
     .divs {
         display: flex;
         flex-wrap: wrap;
