@@ -1,0 +1,1 @@
+ng build --base-href /$($PWD | Split-Path -Leaf)/
