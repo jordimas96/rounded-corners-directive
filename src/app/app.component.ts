@@ -42,4 +42,8 @@ export class AppComponent {
             this.eachRoundness[3] + "px "
         );
     }
+
+    public esApple() {
+        return /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent);
+    }
 }
