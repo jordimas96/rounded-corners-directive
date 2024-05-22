@@ -1,0 +1,25 @@
+
+
+roundAll4Corners: fer que al arrodonir els cantos miri els marges del seus germans o algo, i miri si el el primer o l'ultim i intenti posar els marges per a tots iguals? té sentit? fer un apanyo amb el dom i buscant els germans de l'element en comptes de passar la llista de childs? Passar realment els germans de l'element al metode en un parametre a part?
+
+
+
+No funciona en firefox
+
+
+exemples layout: apple watch (ja no).
+posar div amb opcions, pos:abs, i un slider que modifica el top del div. div de fora amb o:h i pos:rel
+
+posar algo rollo bottom de iphone, fons de pantalla, embolcall blanc semitransparent, i icones, que haurien de ser realment 2 botons llargs
+
+
+
+afegir parametre "buttonClass" o "elementToBeAlsoRoundedSelector"
+
+potser afegir parametre (round all children equally) que aniria sempre quan el round 4 corners fos true
+
+
+@Input() useSquircle: boolean = false;
+
+
+nomes modificar els que digui border-radius: inherit??
